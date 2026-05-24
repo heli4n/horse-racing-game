@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("./assets/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Courier New", monospace;
+    image-rendering: pixelated;
+}
+
+button {
+    font-family: inherit;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+/* MAIN LAYOUT */
+
+.game-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 300px;
+    gap: 20px;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.left-panel,
+.right-panel {
+    min-height: 650px;
+}
+
+.parchment-panel {
+    background-image: url("./assets/parchment.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 28px;
+    color: #3b230f;
+}
+
+.left-panel h2,
+.left-panel h3,
+.right-panel h2 {
+    text-align: center;
+    color: #4a2b12;
+    margin-top: 8px;
+}
+
+.race-area {
+    text-align: center;
+    padding: 18px;
+}
+
+.race-area h1 {
+    color: #5a2d0c;
+    text-shadow: 2px 2px #f3d28b;
+    margin-top: 0;
+}
+
+/* LEFT PANEL */
+
+.luck-box {
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.selected-horse-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    color: #3b230f;
+}
+
+.small-horse {
+    width: 52px;
+    image-rendering: pixelated;
+}
+
+.control-area {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.current-race-text {
+    font-weight: bold;
+    color: #3b230f;
+    margin-bottom: 10px;
+}
+
+/* IMAGE BUTTONS */
+
+.image-button {
+    border: none;
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    image-rendering: pixelated;
+    display: block;
+    margin: 8px auto;
+}
+
+.image-button:hover {
+    transform: scale(1.03);
+}
+
+.image-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.start-button {
+    background-image: url("./assets/buttons/start.png");
+    width: 210px;
+    height: 100px;
+}
+
+.next-button {
+    background-image: url("./assets/buttons/next.png");
+    width: 160px;
+    height: 75px;
+}
+
+.reset-button {
+    background-image: url("./assets/buttons/reset.png");
+    width: 160px;
+    height: 75px;
+}
+
+/* RACE TRACK */
+
+.race-track {
+    width: 100%;
+}
+
+.race-track h2 {
+    color: #5a2d0c;
+    text-shadow: 1px 1px #f3d28b;
+}
+
+.empty-race-text {
+    color: #5b3a1d;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.horse-lane {
+    margin-bottom: 9px;
+}
+
+.lane-info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #4a2b12;
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.track-line {
+    position: relative;
+    height: 55px;
+    overflow: hidden;
+}
+
+.track-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #5b3a1d;
+    white-space: nowrap;
+}
+
+.horse-icon {
+    position: absolute;
+    top: 0;
+    width: 70px;
+    image-rendering: pixelated;
+    transition: left 0.1s linear;
+    z-index: 2;
+}
+
+/* RIGHT PANEL / HISTORY */
+
+.results-panel {
+    color: #3b230f;
+}
+
+.history-box {
+    border: 2px solid #6b3f1d;
+    background-color: rgba(255, 235, 180, 0.55);
+    padding: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: #3b230f;
+}
+
+.history-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.history-box p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.history-box:hover {
+    background-color: rgba(255, 220, 130, 0.75);
+}
+
+/* POPUP */
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    width: 430px;
+    min-height: 420px;
+    padding: 35px;
+    position: relative;
+    color: #3b230f;
+}
+
+#closePopup {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    border: 2px solid #5b3218;
+    background-color: #e0b96f;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* MOBILE SIMPLE FIX */
+
+@media (max-width: 1000px) {
+    .game-container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel,
+    .right-panel {
+        min-height: auto;
+    }
+}
