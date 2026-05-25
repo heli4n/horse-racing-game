@@ -12,7 +12,6 @@ src/stores/raceStore.js, calculatePerformance() ,line 84.
 One of the design decisions that I am proud of is the result panel. Instead of showing all 10 results directly, for each race only the top 3 is shown. To see the all 10 result you just need to click on the desired race and there will be a closable pop up. This way I obtain more clean interface.
 Location: src/components/ResultsPanel.vue ,lines 43-45.
 
-
 **Design Desicion, I Would Revisit**
 
 One design decision I would revisit is how the race animation logic and the selected horse display are handled.
@@ -24,7 +23,7 @@ I would also revisit how selected horses are shown in the left panel. Right now,
 
 **What Would Break First in Larger Scale**
 
-Like I mentioned in the revisit part, the startRace() part would have break first. I need to separate race simulation, horse generation, and UI state into different modules.
+Like I mentioned in the revisit part, the startRace() logic would have break first. I need to separate race simulation, horse generation, and UI state into different modules.
 
 **First Thing to Tell a Teammate**
 
@@ -32,7 +31,8 @@ That the main game logic lives in src/stores/raceStore.js and components mostly 
 
 **Hardest Part**
 
-Time limit. I am in exchange program in Korea, so the test case period was conflicting with my midterm and presentation week. So I needed to use AI more than usual.
+The hardest part was managing the it within the time limit. I am currently in an exchange program in Korea, and the case study period overlapped with my midterm and presentation week.
+Because of that, I had to prioritize the core race flow, animation, and visual design instead of trying to implement every possible feature.
 
 **Assumptions**
 
@@ -52,7 +52,7 @@ I did not add betting, replay mode, or advanced statistics. I focused on the cor
 
 **AI Workflow**
 
-Since I hadn't enough time. First I used AI to have a ready template that I can work and modify on. I used this prompt: 
+Since I had a time problem. First I used AI to have a ready template that I can work and modify on. I used this prompt: 
 
     I’m working on a Vue 3 frontend case study. It is a horse racing game and I already set up the project with Vite and installed Pinia.
 
@@ -85,7 +85,7 @@ One AI suggestion I did not fully follow was making the UI more generic and mode
 
 **Mislead Of AI**
 
-AI was sometimes misleading when suggesting changes without considering my existing file structure and also trying to improve it without my knowledge. I caught this when I was writing the code and testing the app after each change.
+AI was sometimes misleading when suggesting changes without considering my existing file structure. It also sometimes tried to improve parts of the code that I did not ask to change. I caught this by checking the actual project files carefully and testing the app after each change.
 
 **Bonus**
 
